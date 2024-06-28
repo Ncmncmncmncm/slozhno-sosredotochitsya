@@ -1,5 +1,293 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  color: var(--text-color, #f1b2ce);
+  font-family: var(--main-font, sans-serif);
+  font-size: var(--font-size, 18px);
+  background-color: var(--bg-color, #000028);
+  background-image: url(../images/cover-image-dark.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
+  min-block-size: 668px;
+  padding: 10px
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 10px;
+  inset-inline-end: 10px;
+  display: block;
+  border-inline-end: 1px solid var(--menu-color, #ff0070);
+  border-block-start: 1px solid var(--menu-color, #ff0070);
+  block-size: 25px;
+  inline-size: 25px;
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: 10px;
+  inset-block-end: 10px;
+  display: block;
+  border-inline-start: 1px solid var(--menu-color, #ff0070);
+  border-block-end: 1px solid var(--menu-color, #ff0070);
+  block-size: 25px;
+  inline-size: 25px;
+}
+
+.header__rec {
+  position: absolute;
+  inset-block-start: 11px;
+  inset-inline-end: 37px;
+}
+
+.header__rec::before {
+  content: 'rec';
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  color: var(--accent-color, #ff0070);
+  text-transform: uppercase;
+  font-size: var(--font-size, 18px);
+  font-family: var(--main-font, sans-serif);
+}
+
+.header__rec::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: calc(100% + 9px);
+  inset-block-start: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-color, #ff0070);
+  filter: drop-shadow(0px 0px 4px 2px var(--accent-color, #ff0070));
+  block-size: 9px;
+  inline-size: 9px;
+}
+
+.header__theme-menu {
+  justify-self: flex-end;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  gap: 14px;
+}
+
+.header__theme-menu-button {
+  margin-inline-end: 8px;
+  line-height: 18px;
+  font-size: 18px;
+  border: none;
+  color: var(--menu-color, #ff0070);
+  text-transform: lowercase;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid #FF007066;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--menu-color, #ff0070);
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--menu-color, #ff0070);
+  pointer-events: none;
+}
+
+.heading {
+  justify-self: start;
+  color: var(--heading-color, #db00ff);
+  font-weight: var(--heading-font-weight, 700);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 95.7px;
+  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
+}
+
+.title__text {
+  max-inline-size: 364px;
+}
+
+.title-decor {
+  background-color: var(--accent-color, #ff0070);
+  color: var(--sec-color, #000028);
+  font-size: var(--font-size, 18px);
+  font-weight: var(--heading-font-weight, 700);
+  line-height: var(--line-height, 23.4px);
+}
+
+.main {
+  display: grid;
+  margin-block-start: 40px;
+  gap: 50px;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+}
+
+.content__section {
+  display: grid;
+  gap: 20px;
+}
+
+.main__section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.section__heading {
+  color: var(--accent-color, #ff0070);
+  font-weight: var(--heading-font-weight, 700);
+  font-size: var(--font-size, 18px);
+  line-height: var(--line-height, 23.4px);
+}
+
+.content__heading-text {
+  background-color: var(--accent-color, #ff0070);
+  color: var(--sec-color, #000028);
+  font-weight: 400;
+  line-height: var(--line-height, 23.4px);
+}
+
+.content__text-block {
+  font-weight: 400;
+  line-height: 23.4px;
+}
+
+.content__link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+}
+
+.content__link:focus {
+  outline: none;
+}
+
+.content__link:focus-visible {
+  outline: 1px solid var(--text-color, #f1b2ce);
+}
+
+.content__link:hover {
+  border-bottom: 1px solid var(--text-color, #f1b2ce);
+}
+
+.advice .content__heading-title {
+  margin-block-end: 10px;
+}
+
+.content__section.gallery {
+  gap: 10px;
+  margin-block-start: -40px;
+}
+
+.drawings {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, 355px);
+  align-items: center;
+}
+
+.page__img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer {
+  min-block-size: 668px;
+  margin-block-start: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--heading-color, #db00ff);
+  text-shadow: 2px 2px 0px 0px var(--accent-color, #ff0070);
+}
+
+@media (width > 767px) {
+  .title__text {
+    margin-block-end: 18px;
+    justify-self: end;
+  }
+  
+  .header {
+    min-block-size: 1024px;
+    padding: 0;
+    padding-inline-end: 20px;
+  }
+  
+  .footer {
+    min-block-size: 1024px;
+  }
+
+  .heading {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+  
+.decorated-zone::before {
+  inset-block-start: 20px;
+  inset-inline-end: 20px;
+  }
+.decorated-zone::after {
+  inset-inline-start: 20px;
+  inset-block-end: 20px;
+}
+
+.header__rec {
+  inset-block-start: 21px;
+  inset-inline-end: 47px;
+}
+
+.header__theme-menu-list {
+  margin-block-start: 13px;
+}
+
+.main {
+  margin-block-start: 60px;
+  gap: 80px;
+  padding-inline-start: 20px;
+  padding-inline-end: 20px;
+}
+  .content__section {
+  grid-template-columns: 236px 2fr;
+}
+
+.main__section-content:nth-of-type(2) {
+  grid-column-start: 2;
+} 
+
+.content__section.concentration__block {
+  grid-template-columns: min-content 1fr;
+}
+
+.concentration__block .main__section-content {
+  grid-column: 1/4;
+}
+
+.advice .content__section {
+  grid-template-columns: min-content 1fr;
+}
+
+.advice .main__section-content {
+  grid-column: 2/4;
+}
+
 }
