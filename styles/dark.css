@@ -4,9 +4,20 @@
   переключая тему
 */
 
+
 .page.theme_dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --main-font: 'IBM Plex Mono';
+  --text-color: #f1b2ce;
+  --bg-color: #000028;
+  --sec-color: #000028;
+  --menu-color: #ff0070;
+  --accent-color: #ff0070;
+  --heading-accent-color: #ff0070;
+  --heading-color: #db00ff;
+  --font-size: 18px;
+  --heading-font-weight: 700;
+  --line-height: 23.4px;
+  --rec-hide: visible;
+  --bg-image: url(../images/cover-image-dark.png);
+  --rec-hide: visible;
 }
