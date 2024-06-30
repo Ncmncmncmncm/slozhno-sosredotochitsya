@@ -156,7 +156,7 @@
 }
 
 .section__heading {
-  color: var(--accent-color, #ff0070);
+  color: var(--text-heading-color, #ff0070);
   font-weight: var(--heading-font-weight, 700);
   font-size: var(--font-size, 18px);
   line-height: var(--line-height, 23.4px);
@@ -282,7 +282,7 @@
     grid-template-columns: 236px 2fr;
   }
 
-  .main__section-content:nth-of-type(2) {
+  .question .main__section-content {
     grid-column-start: 2;
   }
 
